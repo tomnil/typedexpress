@@ -1,0 +1,22 @@
+{
+  "name": "emptyts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "set TS_NODE_FILES=true & node -r ts-node/register/transpile-only src/index.ts",
+    "nodemon": "nodemon --watch src/**/*.ts --watch src/**/*.js --exec node -r ts-node/register/transpile-only src/index.ts",
+    "eslint": "eslint src/**/*.{js,ts,tsx}"
+  },
+  "keywords": [],
+  "author": "Tomas Nilsson",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@typescript-eslint/eslint-plugin": "^4.31.2",
+    "ts-node": "^10.2.1"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
