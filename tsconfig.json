@@ -1,32 +1,42 @@
 {
-  "compilerOptions": { /* Docs: https://www.typescriptlang.org/tsconfig */
-    "target": "ES2020",
-    "module": "commonjs",
-    "outDir": "bin",
-    "rootDir": "src",
-    "strict": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "checkJs": true,
-    "allowJs": true,
-    "moduleResolution": "node",
-    "types": [
-      "node"
+    "compilerOptions": { /* Docs: https://www.typescriptlang.org/tsconfig */
+        "target": "ES2022",
+        "module": "ES2022",
+        "outDir": "bin",
+        "rootDir": "src",
+        "strict": true,
+        "noImplicitAny": false,
+        "strictNullChecks": true,
+        "checkJs": true,
+        "allowJs": true,
+        "moduleResolution": "node",
+        "types": [
+            "node"
+        ],
+        "lib": [
+            "ES2022"
+        ],
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "allowUnreachableCode": true,
+        "strictFunctionTypes": true,
+        "useUnknownInCatchVariables": false,
+        "exactOptionalPropertyTypes": true,
+        "composite": false,
+        "sourceMap": true
+    },
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.js"
     ],
-    "lib": [
-      "es6"
+    "exclude": [
+        "node_modules",
+        "<node_internals>/**",
     ],
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "allowUnreachableCode": true
-  },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.js"
-  ],
-  "exclude": [
-    "node_modules",
-    "<node_internals>/**",
-  ]
+    "ts-node": {
+        "experimentalSpecifierResolution": "node",
+        "transpileOnly": true,
+        "esm": true,
+    },
 }
