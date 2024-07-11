@@ -1,6 +1,6 @@
 import Express from 'express';
+import { Query, Send } from 'express-serve-static-core';
 import http from 'http';
-import { Send, Query } from 'express-serve-static-core';
 
 
 let app: Express.Application | undefined = undefined;
@@ -21,10 +21,8 @@ export interface TypedRequest<T extends Query, U> extends Express.Request {
 
 
 export interface TypedResponse<ResBody> extends Express.Response {
-    json: Send<ResBody, this>;
+    json: Send<ResBody, this>;  // Getting "Send is not generic" error? Import Send from 'express-serve-static-core' to fix
 }
-
-
 
 // *************************************************
 // Setup Express
@@ -48,7 +46,7 @@ app.get('/', function (_req: Express.Request, res: Express.Response) {
 app.get('/article/:id', function (req: TypedRequestQuery<{ id: string }>, res: Express.Response) {
 
     const id = req.query.id;
-    res.status(200).json({ ID: id });
+    res.status(200).json({ InputID: id }); // Example basically uses "any" here
 
 });
 
